@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("io.github.takahirom.roborazzi")
 }
 
 android {
@@ -37,9 +38,23 @@ android {
     buildFeatures {
         compose = true
     }
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+        }
+    }
 }
 
 dependencies {
+    //JUnit
+    testImplementation("androidx.test.ext:junit-ktx:1.2.1")
+    testImplementation("androidx.compose.ui:ui-test-junit4-android:1.7.8")
+    //Robolectric
+    testImplementation("org.robolectric:robolectric:4.14.1")
+    //Roborazzi
+    testImplementation("io.github.takahirom.roborazzi:roborazzi:1.42.0")
+    testImplementation("io.github.takahirom.roborazzi:roborazzi-compose:1.42.0")
+    testImplementation("io.github.takahirom.roborazzi:roborazzi-junit-rule:1.42.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
