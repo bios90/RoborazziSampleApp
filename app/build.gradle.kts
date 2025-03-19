@@ -43,6 +43,12 @@ android {
             isIncludeAndroidResources = true
         }
     }
+    roborazzi {
+        outputDir.set(file("src/screenshots"))
+        compare {
+            outputDir.set(file("build/outputs/screenshots_comparison"))
+        }
+    }
 }
 
 dependencies {
