@@ -55,6 +55,7 @@ fun WelcomeScreen(
             ) {
                 SecondaryButton(
                     modifier = Modifier
+                        .fillMaxWidth()
                         .padding(top = 86.dp)
                         .padding(horizontal = 36.dp)
                         .height(52.dp),
